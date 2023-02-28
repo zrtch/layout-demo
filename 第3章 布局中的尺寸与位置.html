@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    body{
+      border: 1px solid black;
+    }
     .box1{
       height: 200px;
       width: 200px;
@@ -46,6 +49,35 @@
       box-sizing: border-box;
       padding-top: 20px;
       margin-top: 10px;
+    }
+    .float1{
+      width: 100px;
+      height: 100px;
+      background: palegoldenrod;
+    }
+    .float2{
+      width: 80px;
+      height: 50px;
+      float: right;
+      background: pink;
+    }
+    .clearfix::after{
+      content: "22";
+      display: block;
+      clear: both;
+    }
+    .position1{
+      width: 100px;
+      height: 100px;
+      background: pink;
+      position: relative;
+      left: 50px;
+    }
+    .position2{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background: red;
     }
   </style>
 </head>
@@ -91,5 +123,27 @@
       2. 怪异盒模型 border-box: width、 height -> content + padding + border
   -->
   <div class="weird">怪异盒模型</div>
+
+  <!-- 浮动样式详解:
+    // 当元素被浮动时，会脱离文档流，根据float的值向左或向右移动，直到它的外边界碰到父元素的内边界或另一个浮动元素的外边界为止，是CSS布局中)现左右布局的一种方式.
+    // 文档流：文档流是元素在Web页面上的一种呈现方式，按照出现的先后顺序进行排列.
+    // 清除浮动的方案：clear属性；BFC；空标签； .clearfix.:after{}.
+    // 浮动特性注意点：只会影响后面的元素；文本不会被浮动元素覆盖；具备内联盒子特性：宽度由内容决定；具备块级盒子特性：支持所有样式；浮动放不下，会自动换行
+  -->
+  <div class="float1 clearfix">
+    <div class="float2"></div>
+  </div>
+
+  <!-- 定位样式详解：
+    // CSS position属性用于指定一个元素在文档中的定位方式，其中top， right, bottom 和 left 属性则决定了该元素的最终位置。
+    // 相对定位及特性：
+          相对定位的元素是在文档中的正常位置偏移给定的值
+          不影响其他元素布局
+          相对于自身进行偏移
+    // 绝对定位及特性
+          绝对定位的元素脱离了文档流，绝对定位元素不占据空间
+  -->
+  <div class="position1"><div class="position2"></div></div>
+
 </body>
 </html>
