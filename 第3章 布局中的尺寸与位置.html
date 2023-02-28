@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1{
+      height: 200px;
+      width: 200px;
+      background: palegoldenrod;
+      margin-bottom: 20px;
+    }
+    .box2{
+      height: 100px;
+      width: 100px;
+      background: paleturquoise;
+      margin-top: 10px;
+    }
+    .block1{
+      height: 100px;
+      width: 100px;
+      background: paleturquoise;
+    }
+    .block2{
+      height: 100px;
+      width: 100px;
+      background: palegreen;
+    }
+    .adaptive1{
+      width: 100px;
+      height: 100px;
+      background: palegoldenrod;
+    }
+    .adaptive2{
+      /* width: 100px; */
+      height: 50px;
+      background: pink;
+      padding-top: 10px;
+    }
+    .weird{
+      width: 200px;
+      height: 110px;
+      background: goldenrod;
+      box-sizing: border-box;
+      padding-top: 20px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 3-2 CSS盒模型的组成:    
+    // 在CSS中，所有的元素都被一个个的"盒子（box）”包围着 ，理解这些“盒子〞的基本原理，是我们使用CSS实现准确布局、处理元素排列的关键.
+    // 盒子的组成：content 内容、padding 内填充、border边框 margin 外边距
+    // css盒模型的组成
+    // padding不能为负值，而margin可以为负值
+    // 背景色会平铺到非margin的区域
+    // margin-top传递的现象及解决方案
+    // margin上下叠加的现象及解决方案 
+  -->
+  <div class="box1">
+    <div class="box2"></div>
+  </div>
+  
+
+  <!-- 3-3 块级盒子与内联盒子:
+    // 在CSS 中我们广泛地使用两种”盒子〞—块级盒子(block box) 和内联盒子 (inline box)。这两种盒子会在页面中表现出不同的行为方式
+    // 块级盒子：div、p、 h1. 内联盒子：span、 a、 strong
+    // 块级盒子的特性：独占一行；支持所有样式；不写宽度的时候，跟父容器的宽度相同；所占区域是一个矩形
+    // 内联盒子的特性：盒子不会产生换行；有些样式不支持，例如：width、 height等；不写宽度的时候，宽度由内容决定；所占的区域不一定是矩形；内联标签之间会有空隙；做文本修饰
+
+  -->
+  <div class="block1"></div>
+  <div class="block2"></div>
+  <span>内容一</span>
+  <span>内容二</span>
+
+  <!-- 3-4 自适应盒模型的特性：
+    // 自适应盒模型指的是，当盒子不设置宽度时，盒模型相关组成部分的处理方式是如何的
+   -->
+   <div class="adaptive1">
+      <div class="adaptive2"></div>
+   </div>
+
+   <!-- 标准盒模型与怪异盒模型：
+    // 在标准模型中，如果你给盒设置 width 和 height，实际设置的是 content box。 padding 和 border 再加上设置的宽高一起决定整个盒子的大小
+    // 在怪异模型中，所有宽度都是可见宽度，所以内容宽度是该宽度减去边框和填充部分
+    // box-sizing属性
+      1. 标准盒模型 content-box: width、 height -> content
+      2. 怪异盒模型 border-box: width、 height -> content + padding + border
+  -->
+  <div class="weird">怪异盒模型</div>
+</body>
+</html>
